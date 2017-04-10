@@ -46,6 +46,9 @@
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
 
+;; 外部文件修改后，自动加载
+(global-auto-revert-mode t)
+
 ; 多个空格删除
 (require 'hungry-delete)
 (global-hungry-delete-mode)
@@ -99,6 +102,7 @@
 (setq-default cursor-type 'bar)
 
 (setq make-backup-files nil)
+(setq auto-save-default nil)
 
 (require 'org)
 (setq org-src-fontify-natively t)
